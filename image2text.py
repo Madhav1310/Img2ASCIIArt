@@ -1,14 +1,12 @@
 from PIL import Image
 import numpy as np
-import requests
-from io import BytesIO
 
 # Global Constants
 TXT_FILE = 'outputs/recent_output.txt'
-IMAGE_PATH = 'inputs/Rick.jpg'  # User must place the image in the 'inputs' folder and change this path
+IMAGE_PATH = 'inputs/rick_and_morty.jpg'  # User must place the image in the 'inputs' folder and change this path
 ASCII_CHARS = '@@##MMBB88NNHHOOGGPPEEXXFFVVYY22ZZCC77LLjjll11rrii;;;:::....  '
 LUMINOSITY_SCALE = 256 / len(ASCII_CHARS)
-WIDTH = 50  # User can change this width for different outputs
+WIDTH = 50  # User caan change this width for different outputs
 
 def remove_transparency(image, bg_color=(255, 255, 255)): #Removes transparency from an image by replacing it with a specified background color.
     if image.mode in ('RGBA', 'LA') or (image.mode == 'P' and 'transparency' in image.info):
@@ -63,5 +61,4 @@ def main(): #Main function to handle the workflow.
     except Exception as e:
         print(f"An error occurred: {e}")
 
-if __name__ == '__main__':
-    main()
+main()
